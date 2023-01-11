@@ -99,7 +99,19 @@
         },
         {
           "type": "SYMBOL",
+          "name": "lam"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "ctr"
+        },
+        {
+          "type": "SYMBOL",
           "name": "_num"
+        },
+        {
+          "type": "SYMBOL",
+          "name": "var"
         }
       ]
     },
@@ -261,6 +273,51 @@
         }
       ]
     },
+    "lam": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "PATTERN",
+          "value": "[@λ]"
+        },
+        {
+          "type": "FIELD",
+          "name": "name",
+          "content": {
+            "type": "SYMBOL",
+            "name": "identifier"
+          }
+        },
+        {
+          "type": "SYMBOL",
+          "name": "_ws"
+        },
+        {
+          "type": "FIELD",
+          "name": "body",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_term"
+          }
+        }
+      ]
+    },
+    "ctr": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/[A-Z]/"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier_char"
+          }
+        }
+      ]
+    },
     "_num": {
       "type": "CHOICE",
       "members": [
@@ -299,6 +356,22 @@
       "type": "PATTERN",
       "value": "\\d(_?\\d)*(\\.\\d)?(_?\\d)*([eE][\\+-]?\\d(_?\\d)*)?"
     },
+    "var": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "STRING",
+          "value": "/[a-z_$]/"
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "_identifier_char"
+          }
+        }
+      ]
+    },
     "comment": {
       "type": "SEQ",
       "members": [
@@ -313,20 +386,8 @@
       ]
     },
     "_ws": {
-      "type": "REPEAT1",
-      "content": {
-        "type": "CHOICE",
-        "members": [
-          {
-            "type": "PATTERN",
-            "value": "\\s+"
-          },
-          {
-            "type": "SYMBOL",
-            "name": "comment"
-          }
-        ]
-      }
+      "type": "PATTERN",
+      "value": "\\s+"
     },
     "_identifier_char": {
       "type": "CHOICE",
@@ -355,8 +416,12 @@
   },
   "extras": [
     {
-      "type": "PATTERN",
-      "value": "\\s"
+      "type": "SYMBOL",
+      "name": "_ws"
+    },
+    {
+      "type": "SYMBOL",
+      "name": "comment"
     }
   ],
   "conflicts": [],
