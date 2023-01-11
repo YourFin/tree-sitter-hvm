@@ -1,0 +1,306 @@
+[
+  {
+    "type": "U60_hex_literal",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "comment",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "dup",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "F60_literal",
+            "named": true
+          },
+          {
+            "type": "U60_dec_literal",
+            "named": true
+          },
+          {
+            "type": "U60_hex_literal",
+            "named": true
+          },
+          {
+            "type": "dup",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          }
+        ]
+      },
+      "expr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "F60_literal",
+            "named": true
+          },
+          {
+            "type": "U60_dec_literal",
+            "named": true
+          },
+          {
+            "type": "U60_hex_literal",
+            "named": true
+          },
+          {
+            "type": "dup",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          }
+        ]
+      },
+      "name0": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      },
+      "name1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "identifier",
+    "named": true,
+    "fields": {}
+  },
+  {
+    "type": "let",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "F60_literal",
+            "named": true
+          },
+          {
+            "type": "U60_dec_literal",
+            "named": true
+          },
+          {
+            "type": "U60_hex_literal",
+            "named": true
+          },
+          {
+            "type": "dup",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          }
+        ]
+      },
+      "expr": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "F60_literal",
+            "named": true
+          },
+          {
+            "type": "U60_dec_literal",
+            "named": true
+          },
+          {
+            "type": "U60_hex_literal",
+            "named": true
+          },
+          {
+            "type": "dup",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "rule",
+    "named": true,
+    "fields": {
+      "lhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "F60_literal",
+            "named": true
+          },
+          {
+            "type": "U60_dec_literal",
+            "named": true
+          },
+          {
+            "type": "U60_hex_literal",
+            "named": true
+          },
+          {
+            "type": "dup",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          }
+        ]
+      },
+      "rhs": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "F60_literal",
+            "named": true
+          },
+          {
+            "type": "U60_dec_literal",
+            "named": true
+          },
+          {
+            "type": "U60_hex_literal",
+            "named": true
+          },
+          {
+            "type": "dup",
+            "named": true
+          },
+          {
+            "type": "let",
+            "named": true
+          }
+        ]
+      }
+    },
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source_file",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "comment",
+          "named": true
+        },
+        {
+          "type": "rule",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "$",
+    "named": false
+  },
+  {
+    "type": ".",
+    "named": false
+  },
+  {
+    "type": "//",
+    "named": false
+  },
+  {
+    "type": ";",
+    "named": false
+  },
+  {
+    "type": "=",
+    "named": false
+  },
+  {
+    "type": "F60_literal",
+    "named": true
+  },
+  {
+    "type": "U60_dec_literal",
+    "named": true
+  },
+  {
+    "type": "dup",
+    "named": false
+  },
+  {
+    "type": "let",
+    "named": false
+  }
+]

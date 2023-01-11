@@ -1,0 +1,22 @@
+===
+simple number rules
+===
+
+1 = 2
+// comment
+2.0 = 3
+400_00_0 = 3
+
+---
+
+(source_file
+  (rule
+    lhs: (U60_dec_literal)
+    rhs: (U60_dec_literal))
+  (rule
+    (comment)
+    lhs: (F60_literal)
+    rhs: (U60_dec_literal))
+  (rule
+    lhs: (U60_dec_literal)
+    rhs: (U60_dec_literal)))
