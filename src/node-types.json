@@ -1,18 +1,262 @@
 [
   {
+    "type": "_num",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "F60_literal",
+        "named": true
+      },
+      {
+        "type": "U60_dec_literal",
+        "named": true
+      },
+      {
+        "type": "U60_hex_literal",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_oper",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "oper_add",
+        "named": true
+      },
+      {
+        "type": "oper_and",
+        "named": true
+      },
+      {
+        "type": "oper_div",
+        "named": true
+      },
+      {
+        "type": "oper_eql",
+        "named": true
+      },
+      {
+        "type": "oper_gte",
+        "named": true
+      },
+      {
+        "type": "oper_gtn",
+        "named": true
+      },
+      {
+        "type": "oper_lte",
+        "named": true
+      },
+      {
+        "type": "oper_ltn",
+        "named": true
+      },
+      {
+        "type": "oper_mod",
+        "named": true
+      },
+      {
+        "type": "oper_mul",
+        "named": true
+      },
+      {
+        "type": "oper_neq",
+        "named": true
+      },
+      {
+        "type": "oper_or",
+        "named": true
+      },
+      {
+        "type": "oper_shl",
+        "named": true
+      },
+      {
+        "type": "oper_shr",
+        "named": true
+      },
+      {
+        "type": "oper_sub",
+        "named": true
+      },
+      {
+        "type": "oper_xor",
+        "named": true
+      }
+    ]
+  },
+  {
+    "type": "_term",
+    "named": true,
+    "subtypes": [
+      {
+        "type": "_num",
+        "named": true
+      },
+      {
+        "type": "app",
+        "named": true
+      },
+      {
+        "type": "ask_sugar",
+        "named": true
+      },
+      {
+        "type": "bng",
+        "named": true
+      },
+      {
+        "type": "chr_sugar",
+        "named": true
+      },
+      {
+        "type": "ctr",
+        "named": true
+      },
+      {
+        "type": "dup",
+        "named": true
+      },
+      {
+        "type": "if_sugar",
+        "named": true
+      },
+      {
+        "type": "lam",
+        "named": true
+      },
+      {
+        "type": "let",
+        "named": true
+      },
+      {
+        "type": "lst_sugar",
+        "named": true
+      },
+      {
+        "type": "op2",
+        "named": true
+      },
+      {
+        "type": "str_sugar",
+        "named": true
+      },
+      {
+        "type": "sup",
+        "named": true
+      },
+      {
+        "type": "sym_sugar",
+        "named": true
+      },
+      {
+        "type": "variable",
+        "named": true
+      }
+    ]
+  },
+  {
     "type": "U60_hex_literal",
     "named": true,
     "fields": {}
   },
   {
-    "type": "comment",
+    "type": "app",
     "named": true,
-    "fields": {}
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "ask_sugar",
+    "named": true,
+    "fields": {
+      "body": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      },
+      "func": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      },
+      "var_name": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "=",
+            "named": false
+          },
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "bng",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "_term",
+          "named": true
+        }
+      ]
+    }
   },
   {
     "type": "ctr",
     "named": true,
-    "fields": {}
+    "fields": {
+      "arg": {
+        "multiple": true,
+        "required": false,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      },
+      "name": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "identifier",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "dup",
@@ -23,35 +267,7 @@
         "required": true,
         "types": [
           {
-            "type": "F60_literal",
-            "named": true
-          },
-          {
-            "type": "U60_dec_literal",
-            "named": true
-          },
-          {
-            "type": "U60_hex_literal",
-            "named": true
-          },
-          {
-            "type": "ctr",
-            "named": true
-          },
-          {
-            "type": "dup",
-            "named": true
-          },
-          {
-            "type": "lam",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "var",
+            "type": "_term",
             "named": true
           }
         ]
@@ -61,35 +277,7 @@
         "required": true,
         "types": [
           {
-            "type": "F60_literal",
-            "named": true
-          },
-          {
-            "type": "U60_dec_literal",
-            "named": true
-          },
-          {
-            "type": "U60_hex_literal",
-            "named": true
-          },
-          {
-            "type": "ctr",
-            "named": true
-          },
-          {
-            "type": "dup",
-            "named": true
-          },
-          {
-            "type": "lam",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "var",
+            "type": "_term",
             "named": true
           }
         ]
@@ -117,9 +305,40 @@
     }
   },
   {
-    "type": "identifier",
+    "type": "if_sugar",
     "named": true,
-    "fields": {}
+    "fields": {
+      "condition": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      },
+      "f_term": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      },
+      "t_term": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      }
+    }
   },
   {
     "type": "lam",
@@ -130,35 +349,7 @@
         "required": true,
         "types": [
           {
-            "type": "F60_literal",
-            "named": true
-          },
-          {
-            "type": "U60_dec_literal",
-            "named": true
-          },
-          {
-            "type": "U60_hex_literal",
-            "named": true
-          },
-          {
-            "type": "ctr",
-            "named": true
-          },
-          {
-            "type": "dup",
-            "named": true
-          },
-          {
-            "type": "lam",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "var",
+            "type": "_term",
             "named": true
           }
         ]
@@ -184,35 +375,7 @@
         "required": true,
         "types": [
           {
-            "type": "F60_literal",
-            "named": true
-          },
-          {
-            "type": "U60_dec_literal",
-            "named": true
-          },
-          {
-            "type": "U60_hex_literal",
-            "named": true
-          },
-          {
-            "type": "ctr",
-            "named": true
-          },
-          {
-            "type": "dup",
-            "named": true
-          },
-          {
-            "type": "lam",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "var",
+            "type": "_term",
             "named": true
           }
         ]
@@ -222,35 +385,7 @@
         "required": true,
         "types": [
           {
-            "type": "F60_literal",
-            "named": true
-          },
-          {
-            "type": "U60_dec_literal",
-            "named": true
-          },
-          {
-            "type": "U60_hex_literal",
-            "named": true
-          },
-          {
-            "type": "ctr",
-            "named": true
-          },
-          {
-            "type": "dup",
-            "named": true
-          },
-          {
-            "type": "lam",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "var",
+            "type": "_term",
             "named": true
           }
         ]
@@ -268,6 +403,57 @@
     }
   },
   {
+    "type": "lst_sugar",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "_term",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "op2",
+    "named": true,
+    "fields": {
+      "oper": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_oper",
+            "named": true
+          }
+        ]
+      },
+      "val0": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      },
+      "val1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
     "type": "rule",
     "named": true,
     "fields": {
@@ -276,35 +462,7 @@
         "required": true,
         "types": [
           {
-            "type": "F60_literal",
-            "named": true
-          },
-          {
-            "type": "U60_dec_literal",
-            "named": true
-          },
-          {
-            "type": "U60_hex_literal",
-            "named": true
-          },
-          {
-            "type": "ctr",
-            "named": true
-          },
-          {
-            "type": "dup",
-            "named": true
-          },
-          {
-            "type": "lam",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "var",
+            "type": "_term",
             "named": true
           }
         ]
@@ -314,35 +472,7 @@
         "required": true,
         "types": [
           {
-            "type": "F60_literal",
-            "named": true
-          },
-          {
-            "type": "U60_dec_literal",
-            "named": true
-          },
-          {
-            "type": "U60_hex_literal",
-            "named": true
-          },
-          {
-            "type": "ctr",
-            "named": true
-          },
-          {
-            "type": "dup",
-            "named": true
-          },
-          {
-            "type": "lam",
-            "named": true
-          },
-          {
-            "type": "let",
-            "named": true
-          },
-          {
-            "type": "var",
+            "type": "_term",
             "named": true
           }
         ]
@@ -365,28 +495,61 @@
     }
   },
   {
-    "type": "var",
+    "type": "str_sugar",
     "named": true,
     "fields": {}
   },
   {
-    "type": "$",
+    "type": "sup",
+    "named": true,
+    "fields": {
+      "val0": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      },
+      "val1": {
+        "multiple": false,
+        "required": true,
+        "types": [
+          {
+            "type": "_term",
+            "named": true
+          }
+        ]
+      }
+    }
+  },
+  {
+    "type": "variable",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": false,
+      "required": true,
+      "types": [
+        {
+          "type": "identifier",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "!",
     "named": false
   },
   {
-    "type": ".",
+    "type": "(",
     "named": false
   },
   {
-    "type": "//",
-    "named": false
-  },
-  {
-    "type": "/[A-Z]/",
-    "named": false
-  },
-  {
-    "type": "/[a-z_$]/",
+    "type": ")",
     "named": false
   },
   {
@@ -406,11 +569,115 @@
     "named": true
   },
   {
+    "type": "[",
+    "named": false
+  },
+  {
+    "type": "]",
+    "named": false
+  },
+  {
+    "type": "ask",
+    "named": false
+  },
+  {
+    "type": "chr_sugar",
+    "named": true
+  },
+  {
     "type": "dup",
     "named": false
   },
   {
+    "type": "else",
+    "named": false
+  },
+  {
+    "type": "identifier",
+    "named": true
+  },
+  {
+    "type": "if",
+    "named": false
+  },
+  {
     "type": "let",
+    "named": false
+  },
+  {
+    "type": "oper_add",
+    "named": true
+  },
+  {
+    "type": "oper_and",
+    "named": true
+  },
+  {
+    "type": "oper_div",
+    "named": true
+  },
+  {
+    "type": "oper_eql",
+    "named": true
+  },
+  {
+    "type": "oper_gte",
+    "named": true
+  },
+  {
+    "type": "oper_gtn",
+    "named": true
+  },
+  {
+    "type": "oper_lte",
+    "named": true
+  },
+  {
+    "type": "oper_ltn",
+    "named": true
+  },
+  {
+    "type": "oper_mod",
+    "named": true
+  },
+  {
+    "type": "oper_mul",
+    "named": true
+  },
+  {
+    "type": "oper_neq",
+    "named": true
+  },
+  {
+    "type": "oper_or",
+    "named": true
+  },
+  {
+    "type": "oper_shl",
+    "named": true
+  },
+  {
+    "type": "oper_shr",
+    "named": true
+  },
+  {
+    "type": "oper_sub",
+    "named": true
+  },
+  {
+    "type": "oper_xor",
+    "named": true
+  },
+  {
+    "type": "sym_sugar",
+    "named": true
+  },
+  {
+    "type": "{",
+    "named": false
+  },
+  {
+    "type": "}",
     "named": false
   }
 ]

@@ -1,5 +1,5 @@
 ===
-simple number rules
+Simple number rules
 ===
 
 1 = 2
@@ -12,11 +12,125 @@ simple number rules
 (source_file
   (rule
     lhs: (U60_dec_literal)
-    rhs: (U60_dec_literal))
+    rhs: (U60_dec_literal)
+    )
   (rule
-    (comment)
     lhs: (F60_literal)
     rhs: (U60_dec_literal))
   (rule
     lhs: (U60_dec_literal)
     rhs: (U60_dec_literal)))
+
+===
+Constructor (ctr)
+===
+bar = (Foo 12)
+
+---
+
+(source_file
+  (rule
+     lhs: (variable (identifier))
+     rhs: (ctr
+            name: (identifier)
+            arg: (U60_dec_literal))))
+
+===
+Constructor sugar
+===
+
+a = B
+
+---
+
+(source_file
+  (rule
+    lhs: (variable
+      (identifier))
+    rhs: (ctr
+      name: (identifier))))
+
+===
+Superposition (sup)
+===
+
+{a b} = 10
+
+---
+
+(source_file
+  (rule
+    lhs: (sup
+      val0: (variable
+        (identifier ))
+      val1: (variable
+        (identifier )))
+    rhs: (U60_dec_literal )))
+
+===
+Binary operation (op2)
+===
+a = (+ 1 2)
+
+---
+
+(source_file
+  (rule
+    lhs: (variable
+      (identifier))
+    rhs: (op2
+      oper: (oper_add)
+      val0: (U60_dec_literal)
+      val1: (U60_dec_literal))))
+
+===
+Modulo (% op2)
+===
+
+a = (% a 2)
+
+---
+(source_file
+  (rule
+    lhs: (variable
+      (identifier))
+    rhs: (op2
+      oper: (oper_mod)
+      val0: (variable
+        (identifier))
+      val1: (U60_dec_literal))))
+
+===
+If sugar
+===
+a = if true { false } else { true }
+
+---
+
+(source_file
+  (rule
+    lhs: (variable
+      (identifier))
+    rhs: (if_sugar
+      condition: (variable
+        (identifier))
+      t_term: (variable
+        (identifier))
+      f_term: (variable
+        (identifier)))))
+
+===
+Bang (bng)
+===
+
+a = !b
+
+---
+
+(source_file
+  (rule
+    lhs: (variable
+      (identifier))
+    rhs: (bng
+      (variable
+        (identifier)))))
