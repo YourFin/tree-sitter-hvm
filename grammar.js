@@ -168,7 +168,7 @@ module.exports = grammar({
     str_sugar: $ => choice(/"[^"\x00]+["\x00]/, /`[^`\x00]+[`\x00]/),
 
     // https://github.com/Kindelia/HVM/blob/68769b257924920b24f7ded43a39ded58d8cbdf3/src/language/syntax.rs#L497
-    lst_sugar: $ => seq('[', repeat($._term), ']'),
+    lst_sugar: $ => seq('[', repeat(seq($._term, optional(','))), ']'),
 
     // https://github.com/Kindelia/HVM/blob/68769b257924920b24f7ded43a39ded58d8cbdf3/src/language/syntax.rs#L527
     if_sugar: $ => seq(
